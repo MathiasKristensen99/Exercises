@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Exercises.Level1;
 
@@ -18,7 +19,12 @@ public class Warmup1
     /// </summary>
     public bool SleepIn(bool weekday, bool vacation)
     {
-        throw new NotImplementedException();
+        return weekday switch
+        {
+            false when !vacation => true,
+            true when !vacation => false,
+            _ => true
+        };
     }
 
     /// <summary>
@@ -46,7 +52,15 @@ public class Warmup1
     /// </summary>
     public int SumDouble(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a.Equals(b))
+        {
+            var sum = a + b;
+            return sum * 2;
+        }
+        else
+        {
+            return a + b;
+        }
     }
 
     /// <summary>
@@ -83,7 +97,12 @@ public class Warmup1
     /// </summary>
     public bool Makes10(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a.Equals(10) | b.Equals(10))
+        {
+            return true;
+        }
+
+        return a + b == 10;
     }
 
     /// <summary>

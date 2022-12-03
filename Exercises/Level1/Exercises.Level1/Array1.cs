@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Exercises.Level1;
 
@@ -19,6 +20,7 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
+        Array.IndexOf(nums, 6);
         throw new NotImplementedException();
     }
 
@@ -67,7 +69,12 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 3)
+        {
+            return nums.Sum();
+        }
+
+        return 0;
     }
 
     /// <summary>
