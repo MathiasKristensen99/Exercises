@@ -39,7 +39,14 @@ public class Warmup1
     /// </summary>
     public bool MonkeyTrouble(bool aSmile, bool bSmile)
     {
-        throw new NotImplementedException();
+        switch (aSmile)
+        {
+            case true when bSmile:
+            case false when !bSmile:
+                return true;
+            default:
+                return false;
+        }
     }
 
     /// <summary>
@@ -73,7 +80,12 @@ public class Warmup1
     /// </summary>
     public int Diff21(int n)
     {
-        throw new NotImplementedException();
+        var result = Math.Abs(21 - n);
+        if (n > 21)
+        {
+            return result * 2;
+        }
+        return result;
     }
 
     /// <summary>
@@ -85,7 +97,13 @@ public class Warmup1
     /// </summary>
     public bool ParrotTrouble(bool talking, int hour)
     {
-        throw new NotImplementedException();
+        return talking switch
+        {
+            true when hour < 7 => true,
+            true when hour is >= 7 and < 20 => false,
+            true when hour > 20 => true,
+            _ => false
+        };
     }
 
     /// <summary>
@@ -114,7 +132,16 @@ public class Warmup1
     /// </summary>
     public bool NearHundred(int n)
     {
-        throw new NotImplementedException();
+        if (Math.Abs(100 - n) <= 10)
+        {
+            return true;
+        }
+        else if (Math.Abs(200 - n) <= 10)
+        {
+            return true;
+        }
+        
+        return false;
     }
 
     /// <summary>
